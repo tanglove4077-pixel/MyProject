@@ -2,46 +2,39 @@
 <html lang="th">
 
 <head>
-
-    <!-- ใช้ภาษาไทยได้ -->
     <meta charset="UTF-8">
-
-    <!-- รองรับมือถือ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ชื่อเว็บไซต์ -->
     <title>VS Code Learning Hub</title>
 
-    <!-- เชื่อมไฟล์ CSS -->
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
 
-    <!-- ===== Navbar ===== -->
+    <!-- ================= HEADER ================= -->
 
     <header>
 
-        <h2 class="logo">Learning Hub</h2>
+        <div class="logo">
+            VS Code Learning Hub
+        </div>
 
         <nav>
 
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
 
-            <a href="#">VS Code</a>
+            <a href="install.html">Install</a>
 
-            <a href="#">Git</a>
+            <a href="git.html">Git</a>
 
-            <a href="#">GitHub</a>
-
-            <a href="#">Contact</a>
+            <a href="github.html">GitHub</a>
 
         </nav>
 
     </header>
 
-    <!-- ===== Hero ===== -->
+    <!-- ================= HERO ================= -->
 
     <section class="hero">
 
@@ -49,19 +42,62 @@
 
         <p>
 
-            HTML CSS JavaScript Git GitHub
+            HTML • CSS • JavaScript • Git • GitHub
 
         </p>
 
-        <button id="btnStart">
+        <div class="button-group">
 
-            เริ่มเรียน
+            <button id="startBtn">
 
-        </button>
+                เริ่มเรียน
+
+            </button>
+
+            <button id="githubBtn">
+
+                GitHub
+
+            </button>
+
+        </div>
 
     </section>
 
-    <!-- เชื่อม JavaScript -->
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <h2>สิ่งที่คุณจะได้เรียน</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>VS Code</h3>
+                <p>เรียนรู้การใช้งานโปรแกรม VS Code ตั้งแต่พื้นฐาน</p>
+            </div>
+
+            <div class="card">
+                <h3>Git</h3>
+                <p>เรียนรู้ Version Control และการ Commit</p>
+            </div>
+
+            <div class="card">
+                <h3>GitHub</h3>
+                <p>Push โปรเจกต์ขึ้น GitHub และ Deploy เว็บไซต์</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 VS Code Learning Hub
+
+    </footer>
 
     <script src="js/script.js"></script>
 

@@ -1,4 +1,4 @@
-/* รีเซ็ตค่าเริ่มต้น */
+/* รีเซ็ตค่า */
 
 *{
     margin:0;
@@ -6,17 +6,17 @@
     box-sizing:border-box;
 }
 
-/* ตัวเว็บ */
-
 body{
 
     font-family:Arial, Helvetica, sans-serif;
 
     background:#f5f5f5;
 
+    color:#333;
+
 }
 
-/* ส่วนหัว */
+/* Header */
 
 header{
 
@@ -26,23 +26,23 @@ header{
 
     align-items:center;
 
-    background:#24292e;
+    background:#24292f;
 
     color:white;
 
-    padding:20px 50px;
+    padding:20px 60px;
 
 }
 
-/* โลโก้ */
-
 .logo{
+
+    font-size:24px;
+
+    font-weight:bold;
 
     color:#58a6ff;
 
 }
-
-/* เมนู */
 
 nav a{
 
@@ -66,17 +66,13 @@ nav a:hover{
 
 .hero{
 
-    height:90vh;
+    background:linear-gradient(135deg,#3b82f6,#7c3aed);
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
+    color:white;
 
     text-align:center;
+
+    padding:120px 20px;
 
 }
 
@@ -92,34 +88,166 @@ nav a:hover{
 
     font-size:22px;
 
-    margin-bottom:30px;
+    margin-bottom:40px;
 
 }
 
-/* ปุ่ม */
+/* Buttons */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
 
 button{
 
-    background:#238636;
-
-    color:white;
+    padding:15px 35px;
 
     border:none;
 
-    padding:15px 40px;
-
-    font-size:18px;
+    border-radius:10px;
 
     cursor:pointer;
 
-    border-radius:8px;
+    font-size:18px;
 
     transition:.3s;
 
 }
 
-button:hover{
+#startBtn{
 
-    background:#2ea043;
+    background:#22c55e;
+
+    color:white;
+
+}
+
+#startBtn:hover{
+
+    background:#16a34a;
+
+}
+
+#githubBtn{
+
+    background:white;
+
+    color:#333;
+
+}
+
+#githubBtn:hover{
+
+    background:#ddd;
+
+}
+
+/* Features */
+
+.features{
+
+    padding:80px 50px;
+
+    text-align:center;
+
+}
+
+.features h2{
+
+    font-size:38px;
+
+    margin-bottom:40px;
+
+}
+
+.card-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    background:white;
+
+    width:300px;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+    color:#2563eb;
+
+}
+
+/* Footer */
+
+footer{
+
+    background:#24292f;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+}
+
+nav{
+
+margin-top:20px;
+
+}
+
+.hero h1{
+
+font-size:36px;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
 
 }

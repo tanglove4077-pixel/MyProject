@@ -1,15 +1,19 @@
-// แสดงข้อความเมื่อเว็บโหลดเสร็จ
-
 console.log("Welcome to VS Code Learning Hub");
 
-// หา Button
+// ปุ่มเริ่มเรียน
+const startBtn = document.getElementById("startBtn");
 
-const button = document.getElementById("btnStart");
+startBtn.addEventListener("click", function () {
 
-// เมื่อกดปุ่ม
+    alert("ยินดีต้อนรับเข้าสู่บทเรียน!");
 
-button.addEventListener("click", function(){
+});
 
-    alert("ยินดีต้อนรับเข้าสู่บทเรียน VS Code");
+// ปุ่ม GitHub
+const githubBtn = document.getElementById("githubBtn");
+
+githubBtn.addEventListener("click", function () {
+
+    alert("บทต่อไปเราจะเชื่อมไปยัง GitHub");
 
 });
