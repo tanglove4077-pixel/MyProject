@@ -250,4 +250,371 @@ flex-direction:column;
 
 }
 
+}/* ========================= */
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+/* Dark Mode Button */
+
+#darkMode{
+
+background:white;
+
+color:black;
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+font-size:20px;
+
+}
+
+/* Scroll */
+
+.scroll{
+
+margin-top:60px;
+
+font-size:40px;
+
+animation:updown 1.2s infinite;
+
+}
+
+@keyframes updown{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* Hero Animation */
+
+.hero h1{
+
+animation:fade 1s ease;
+
+}
+
+.hero p{
+
+animation:fade 1.5s ease;
+
+}
+
+.button-group{
+
+animation:fade 2s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0px);
+
+}
+
+}.dark{
+
+background:#0d1117;
+
+color:white;
+
+}
+
+.dark header{
+
+background:#161b22;
+
+}
+
+.dark footer{
+
+background:#161b22;
+
+}
+
+.dark .card{
+
+background:#21262d;
+
+color:white;
+
+}
+
+.dark #githubBtn{
+
+background:#30363d;
+
+color:white;
+
+}.contact{
+
+padding:80px;
+
+text-align:center;
+
+}
+
+.contact form{
+
+max-width:600px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.contact input,
+.contact textarea{
+
+padding:15px;
+
+font-size:18px;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+}
+
+.contact textarea{
+
+height:180px;
+
+}/* ============================ */
+/* Install Page */
+/* ============================ */
+
+.page-title{
+
+padding:70px;
+
+text-align:center;
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.page-title h1{
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+.install-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+padding:70px;
+
+}
+
+.install-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.install-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.install-card h2{
+
+margin-bottom:20px;
+
+color:#2563eb;
+
+}
+
+.install-card button{
+
+margin-top:20px;
+
+}.progress{
+
+width:80%;
+
+margin:auto;
+
+background:#ddd;
+
+height:30px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:40px;
+
+}
+
+.progress-bar{
+
+width:40%;
+
+height:100%;
+
+background:#22c55e;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-weight:bold;
+
+}.command-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:#24292f;
+
+color:white;
+
+padding:20px;
+
+border-radius:10px;
+
+margin-bottom:20px;
+
+}
+
+.command-box button{
+
+background:#238636;
+
+color:white;
+
+border:none;
+
+padding:10px 20px;
+
+cursor:pointer;
+
+border-radius:8px;
+
+}/* ========================= */
+/* Git Commands */
+/* ========================= */
+
+.commands{
+
+    width:80%;
+
+    margin:60px auto;
+
+}
+
+.command-box{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#24292f;
+
+    color:white;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border-radius:10px;
+
+}
+
+.command-box code{
+
+    font-size:18px;
+
+}
+
+.command-box button{
+
+    background:#22c55e;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.command-box button:hover{
+
+    background:#16a34a;
+
 }
