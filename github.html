@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository - MyProject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        .github-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .github-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .github-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .github-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .section p, .section li {
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            margin-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background-color: #ffd700;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #ffd700;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .github-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .github-header h1 {
+                font-size: 1.8em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="github-container">
+        <div class="github-header">
+            <h1>📚 MyProject Repository</h1>
+            <p>แพลตฟอร์มการเรียนรู้แบบโต้ตอบสำหรับครูและนักเรียน</p>
+        </div>
+
+        <div class="section">
+            <h2>📖 คำอธิบายโปรเจค</h2>
+            <p>
+                MyProject เป็นแพลตฟอร์มการเรียนรู้แบบดิจิทัลที่ออกแบบมาเพื่อช่วยให้ครูสามารถสร้างบทเรียน
+                และประเมินผลการเรียนของนักเรียนได้อย่างมีประสิทธิภาพ ระบบนี้รองรับการเรียนรู้แบบออนไลน์
+                พร้อมฟีเจอร์การแบ่งหน้ากำหนดเอง อินเทอร์เฟซที่ใช้งานง่าย และโหมดมืดเพื่อประสบการณ์ผู้ใช้ที่ดียิ่งขึ้น
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>✨ ฟีเจอร์หลัก</h2>
+            <div class="features-grid">
+                <div class="feature-item">สร้างและจัดการบทเรียน</div>
+                <div class="feature-item">ระบบควิซเพื่อประเมินผล</div>
+                <div class="feature-item">โหมดมืด/สว่าง</div>
+                <div class="feature-item">ตอบสนองต่อทุกขนาดหน้าจอ</div>
+                <div class="feature-item">ติดตั้งง่ายและใช้งานได้ทันที</div>
+                <div class="feature-item">รองรับหลายภาษา</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 วิธีการใช้งาน</h2>
+            <p><strong>ขั้นตอนที่ 1: ติดตั้งโปรเจค</strong></p>
+            <div class="code-block">
+git clone https://github.com/your-username/MyProject.git<br>
+cd MyProject
+            </div>
+
+            <p><strong>ขั้นตอนที่ 2: ติดตั้ง Dependencies</strong></p>
+            <div class="code-block">
+npm install
+            </div>
+
+            <p><strong>ขั้นตอนที่ 3: รันโปรเจค</strong></p>
+            <div class="code-block">
+npm run dev
+            </div>
+
+            <p><strong>ขั้นตอนที่ 4: เปิดในเบราว์เซอร์</strong></p>
+            <p>เข้าไปที่ <code style="background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 3px;">http://localhost:5173</code> 
+            เพื่อดูแอปพลิเคชัน</p>
+        </div>
+
+        <div class="section">
+            <h2>📁 โครงสร้างโปรเจค</h2>
+            <div class="code-block">
+MyProject/<br>
+├── App.jsx           # คอมโพเนนต์หลัก<br>
+├── main.jsx          # จุดเข้า<br>
+├── package.json      # Dependencies<br>
+├── components/       # คอมโพเนนต์ React<br>
+├── pages/            # หน้าต่างๆ<br>
+├── css/              # สไตล์ CSS<br>
+├── js/               # ไฟล์ JavaScript<br>
+├── images/           # รูปภาพ<br>
+└── index.html        # HTML หลัก
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💻 เทคโนโลยีที่ใช้</h2>
+            <ul>
+                <li><strong>Frontend Framework:</strong> React</li>
+                <li><strong>Styling:</strong> CSS3 & Responsive Design</li>
+                <li><strong>Build Tool:</strong> Vite</li>
+                <li><strong>Package Manager:</strong> npm</li>
+                <li><strong>Version Control:</strong> Git & GitHub</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ สิ่งที่ต้องสอดแทรก</h2>
+            <ul>
+                <li>Node.js (เวอร์ชัน 14.0 ขึ้นไป)</li>
+                <li>npm หรือ yarn</li>
+                <li>เบราว์เซอร์สมัยใหม่</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🤝 การมีส่วนร่วม (Contributing)</h2>
+            <p>เราต้องการความช่วยเหลือจากชุมชน! หากคุณต้องการมีส่วนร่วม:</p>
+            <ul>
+                <li>Fork โปรเจคนี้</li>
+                <li>สร้าง branch ใหม่ (<code style="background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 3px;">git checkout -b feature/AmazingFeature</code>)</li>
+                <li>Commit changes ของคุณ (<code style="background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 3px;">git commit -m 'Add AmazingFeature'</code>)</li>
+                <li>Push ไปยัง branch (<code style="background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 3px;">git push origin feature/AmazingFeature</code>)</li>
+                <li>เปิด Pull Request</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📝 ใบอนุญาต (License)</h2>
+            <p>โปรเจคนี้ได้รับใบอนุญาตภายใต้ MIT License - ดูไฟล์ LICENSE สำหรับรายละเอียดเพิ่มเติม</p>
+        </div>
+
+        <div class="section">
+            <h2>📞 ติดต่อและการสนับสนุน</h2>
+            <p>
+                หากคุณมีคำถามหรือต้องการความช่วยเหลือ กรุณา:
+            </p>
+            <ul>
+                <li>เปิด Issue ใน GitHub Repository</li>
+                <li>ส่งอีเมล: support@myproject.com</li>
+                <li>ติดตามเรา: <a href="#" style="color: #ffd700; text-decoration: none;">@MyProjectEducation</a></li>
+            </ul>
+            <a href="https://github.com/your-username/MyProject" target="_blank" class="github-link">
+                🔗 ไปที่ GitHub Repository
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+            <p>ขอบคุณที่ใช้ MyProject! 🙏</p>
+        </div>
+    </div>
+</body>
+</html>

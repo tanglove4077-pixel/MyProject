@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MyProject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        .contact-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .contact-info h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #ffff00;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-label::before {
+            content: "📌";
+            margin-right: 8px;
+        }
+
+        .info-item p {
+            font-size: 1em;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .info-item a {
+            color: #ffff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .contact-form h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: inherit;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffd700;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .social-links {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+            margin-top: 40px;
+        }
+
+        .social-links h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .social-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .social-item .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .social-item .name {
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .faq-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+            margin-top: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #ffff00;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-question::before {
+            content: "❓";
+            margin-right: 8px;
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        .response-message {
+            display: none;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4CAF50;
+            border-radius: 5px;
+            margin-top: 15px;
+            color: #4CAF50;
+        }
+
+        .response-message.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .contact-header h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>📞 ติดต่อเรา</h1>
+            <p>เรามีความยินดีที่จะได้ยินจากคุณ</p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>📍 ข้อมูลการติดต่อ</h2>
+                
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <p><a href="mailto:support@myproject.com">support@myproject.com</a></p>
+                    <p style="font-size: 0.9em; opacity: 0.8; margin-top: 5px;">ตอบกลับภายใน 24 ชั่วโมง</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">โทรศัพท์</div>
+                    <p><a href="tel:+66912345678">+66 (0)91-234-5678</a></p>
+                    <p style="font-size: 0.9em; opacity: 0.8; margin-top: 5px;">วันจันทร์-ศุกร์ 09:00-17:00</p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">ที่อยู่สำนักงาน</div>
+                    <p>
+                        MyProject Office<br>
+                        123 Learning Street<br>
+                        Bangkok, Thailand 10100
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">เวลาทำการ</div>
+                    <p>วันจันทร์-ศุกร์: 09:00 - 17:00<br>
+                    วันเสาร์: 10:00 - 14:00<br>
+                    วันอาทิตย์: ปิด</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>💬 ส่งข้อความ</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">ชื่อ *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="กรุณาใส่ชื่อของคุณ"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">อีเมล *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your@email.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">หัวข้อ *</label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="หัวข้อของข้อความ"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">ข้อความ *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="กรุณาใส่ข้อความของคุณที่นี่..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ส่งข้อความ</button>
+                    <div class="response-message" id="responseMessage">
+                        ✓ ขอบคุณที่ติดต่อเรา! เราจะตอบกลับให้เร็วที่สุด
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <h2>🔗 ติดตามเรา</h2>
+            <div class="social-grid">
+                <a href="https://www.facebook.com" target="_blank" class="social-item">
+                    <div class="icon">f</div>
+                    <div class="name">Facebook</div>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-item">
+                    <div class="icon">𝕏</div>
+                    <div class="name">Twitter</div>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-item">
+                    <div class="icon">📷</div>
+                    <div class="name">Instagram</div>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-item">
+                    <div class="icon">in</div>
+                    <div class="name">LinkedIn</div>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="social-item">
+                    <div class="icon">▶️</div>
+                    <div class="name">YouTube</div>
+                </a>
+                <a href="https://github.com" target="_blank" class="social-item">
+                    <div class="icon">🐙</div>
+                    <div class="name">GitHub</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>❓ คำถามที่พบบ่อย (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">ฉันจะเริ่มต้นใช้งาน MyProject ได้อย่างไร?</div>
+                <div class="faq-answer">
+                    ไปที่หน้า <a href="install.html" style="color: #ffff00;">ติดตั้ง</a> และทำตามขั้นตอนการติดตั้ง ซอฟต์แวร์ที่จำเป็น จากนั้นเข้าสู่แพลตฟอร์มเพื่อเริ่มเรียนรู้
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ฉันสามารถใช้งาน MyProject บนอุปกรณ์มือถือของฉันได้หรือไม่?</div>
+                <div class="faq-answer">
+                    MyProject ออกแบบให้ Responsive และสามารถใช้งานบนเว็บเบราว์เซอร์ของมือถือได้ แต่ขอแนะนำให้ใช้คอมพิวเตอร์สำหรับประสบการณ์ที่ดีที่สุด
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ฉันมีปัญหาในการติดตั้ง ฉันควรทำอย่างไร?</div>
+                <div class="faq-answer">
+                    คุณสามารถติดต่อเราผ่านแบบฟอร์มข้างบนหรือส่งอีเมลไปยัง <a href="mailto:support@myproject.com" style="color: #ffff00;">support@myproject.com</a> พร้อมอธิบายปัญหาของคุน
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ข้อมูลของฉันจะปลอดภัยหรือไม่?</div>
+                <div class="faq-answer">
+                    ใช่ เรามีมาตรการรักษาความปลอดภัยอย่างเข้มงวด ข้อมูลของคุณจะไม่ถูกแชร์ให้บุคคลที่สาม และอยู่ภายใต้นโยบายความเป็นส่วนตัว
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ฉันสามารถให้ความเห็นหรือเสนอฟีเจอร์ใหม่ได้หรือไม่?</div>
+                <div class="faq-answer">
+                    ได้ เราต้องการความเห็นจากผู้ใช้! กรุณาใช้แบบฟอร์มข้างบนเพื่อส่งความคิดเห็น หรือไปที่ <a href="https://github.com" target="_blank" style="color: #ffff00;">GitHub Repository</a> เพื่อเสนอ Feature Requests
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+            <p>เรหวังว่าได้ยินจากคุns เร็ว ๆ นี้! 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Show success message
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                responseMessage.classList.remove('show');
+            }, 5000);
+            
+            console.log('Message sent:', { name, email, subject, message });
+        });
+
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' || !answer.style.display ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

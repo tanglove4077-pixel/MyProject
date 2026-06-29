@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Setup - MyProject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        .setup-container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .setup-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .setup-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        .setup-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+
+        .section h3 {
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #00ff88;
+        }
+
+        .section p, .section li {
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .section ul, .section ol {
+            margin-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .step-card {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .step-card h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #00d4ff;
+            color: #1a1a2e;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            border-left: 3px solid #00ff88;
+            color: #00ff88;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 0, 0.1);
+            border-left: 4px solid #ffc100;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            color: #ffc100;
+        }
+
+        .success-box {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 4px solid #00ff88;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            color: #00ff88;
+        }
+
+        .info-box {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            color: #00d4ff;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background-color: #00d4ff;
+            color: #1a1a2e;
+        }
+
+        .btn-primary:hover {
+            background-color: #00b8cc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: #00ff88;
+            color: #1a1a2e;
+        }
+
+        .btn-secondary:hover {
+            background-color: #00cc69;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .setup-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .setup-header h1 {
+                font-size: 1.8em;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <div class="setup-header">
+            <h1>📤 Upload MyProject to GitHub</h1>
+            <p>คำแนะนำทีละขั้นตอนในการอัพเดตโปรเจคไปยัง GitHub</p>
+        </div>
+
+        <!-- Prerequisites Section -->
+        <div class="section">
+            <h2>📋 ข้อกำหนดเบื้องต้น</h2>
+            <ul>
+                <li>✅ ติดตั้ง Git แล้ว</li>
+                <li>✅ มี GitHub Account (ถ้าไม่มี ไปสมัครที่ <a href="https://github.com" target="_blank" style="color: #00d4ff;">github.com</a>)</li>
+                <li>✅ โปรเจค MyProject พร้อมใช้งาน</li>
+            </ul>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="section">
+            <h2>🚀 ขั้นตอนการอัพโหลด</h2>
+
+            <div class="step-card">
+                <h3><span class="step-number">1</span>สร้าง GitHub Repository</h3>
+                <ol style="margin-left: 30px;">
+                    <li>ไปที่ <a href="https://github.com" target="_blank" style="color: #00d4ff;">github.com</a> และ Login</li>
+                    <li>คลิก <strong>"+"</strong> ที่มุมบนขวา → <strong>"New repository"</strong></li>
+                    <li>ตั้งค่าดังนี้:
+                        <ul>
+                            <li><strong>Repository name</strong>: <code style="background: rgba(0,0,0,0.3); padding: 2px 5px;">MyProject</code></li>
+                            <li><strong>Description</strong>: <code style="background: rgba(0,0,0,0.3); padding: 2px 5px;">VS Code Learning Hub</code></li>
+                            <li><strong>Visibility</strong>: เลือก <strong>Public</strong></li>
+                        </ul>
+                    </li>
+                    <li>คลิก <strong>"Create repository"</strong></li>
+                </ol>
+                <div class="info-box">
+                    💡 <strong>Tips</strong>: เลือก Public เพื่อให้ GitHub Pages ทำงาน
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">2</span>Copy Repository URL</h3>
+                <ol style="margin-left: 30px;">
+                    <li>คลิกปุ่ม <strong>"Code"</strong> (สีเขียว)</li>
+                    <li>เลือก <strong>"HTTPS"</strong></li>
+                    <li>คัดลอก URL เช่น: <code style="background: rgba(0,0,0,0.3); padding: 2px 5px;">https://github.com/your-username/MyProject.git</code></li>
+                </ol>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">3</span>เตรียม Local Repository</h3>
+                <p>เปิด <strong>Command Prompt / Terminal</strong> และรัน:</p>
+                <div class="code-block">cd C:\Users\Administrator\Desktop\MyProject</div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">4</span>Initialize Git (ถ้ายังไม่มี)</h3>
+                <div class="code-block">
+git init
+                </div>
+                <p style="margin-top: 10px;">ตั้งค่าชื่อและอีเมล:</p>
+                <div class="code-block">
+git config --global user.name "Your Name"<br>
+git config --global user.email "your.email@example.com"
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">5</span>Add Files</h3>
+                <div class="code-block">
+git add .
+                </div>
+                <p style="margin-top: 10px;">ตรวจสอบสถานะ:</p>
+                <div class="code-block">
+git status
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">6</span>Commit Changes</h3>
+                <div class="code-block">
+git commit -m "Initial commit: Add MyProject VS Code Learning Hub"
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">7</span>Add Remote Origin</h3>
+                <p>แทนที่ YOUR-USERNAME ด้วยชื่อ GitHub ของคุณ:</p>
+                <div class="code-block">
+git remote add origin https://github.com/YOUR-USERNAME/MyProject.git
+                </div>
+                <p style="margin-top: 10px;">ตรวจสอบ remote:</p>
+                <div class="code-block">
+git remote -v
+                </div>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-number">8</span>Push ไปยัง GitHub</h3>
+                <div class="code-block">
+git branch -M main<br>
+git push -u origin main
+                </div>
+                <div class="warning-box">
+                    ⚠️ <strong>สำคัญ</strong>: ถ้ามี Popup ให้ขอ Authentication ให้ใช้ Personal Access Token (ไม่ใช่รหัสผ่าน)
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub Pages Setup -->
+        <div class="section">
+            <h2>🌐 ตั้งค่า GitHub Pages</h2>
+            <p>เพื่อให้เว็บไซต์ของคุณสามารถเข้าถึงได้ออนไลน์:</p>
+
+            <ol style="margin-left: 20px;">
+                <li>ไปที่ GitHub Repository ของคุณ</li>
+                <li>คลิก <strong>"Settings"</strong> (แท็บด้านบน)</li>
+                <li>ไปที่ <strong>"Pages"</strong> ในเมนูด้านซ้าย</li>
+                <li>ตั้งค่า:
+                    <ul>
+                        <li><strong>Source</strong>: เลือก "Deploy from a branch"</li>
+                        <li><strong>Branch</strong>: เลือก "main" และ folder "/(root)"</li>
+                        <li>คลิก <strong>"Save"</strong></li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="success-box">
+                ✅ <strong>เสร็จเรียบร้อย!</strong> GitHub จะสร้าง URL สำหรับเว็บของคุณ เช่น:<br>
+                <code style="background: rgba(0,0,0,0.3); padding: 5px 8px; margin-top: 8px; display: inline-block;">https://your-username.github.io/MyProject/</code>
+            </div>
+        </div>
+
+        <!-- Tips for Future Updates -->
+        <div class="section">
+            <h2>📝 Tips สำหรับการอัพเดตครั้งต่อไป</h2>
+            <p>เมื่อคุณทำการเปลี่ยนแปลงเพิ่มเติม:</p>
+            <div class="code-block">
+# 1. บันทึกไฟล์ทั้งหมด<br>
+git add .<br>
+<br>
+# 2. Commit<br>
+git commit -m "Update: Description of changes"<br>
+<br>
+# 3. Push<br>
+git push origin main
+            </div>
+        </div>
+
+        <!-- Authentication -->
+        <div class="section">
+            <h2>🔐 Personal Access Token (ถ้าต้อง Authentication)</h2>
+            <p>ถ้า Git ขอ Authentication ให้ใช้ Personal Access Token:</p>
+
+            <div class="step-card" style="margin-top: 15px;">
+                <h3>สร้าง Personal Access Token:</h3>
+                <ol style="margin-left: 30px;">
+                    <li>ไปที่ GitHub → <strong>Settings</strong> → <strong>Developer settings</strong> → <strong>Personal access tokens</strong></li>
+                    <li>คลิก <strong>"Generate new token"</strong></li>
+                    <li>ตั้งค่า Scope: ✅ repo (เลือก all)</li>
+                    <li>คลิก <strong>"Generate token"</strong> และคัดลอก</li>
+                    <li>ใช้ Token แทนรหัสผ่านเมื่อ Push</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="section">
+            <h2>🐛 Troubleshooting</h2>
+
+            <h3>❌ ปัญหา: fatal: not a git repository</h3>
+            <div class="code-block">
+git init<br>
+git add .<br>
+git commit -m "Initial commit"<br>
+git remote add origin &lt;your-url&gt;<br>
+git push -u origin main
+            </div>
+
+            <h3>❌ ปัญหา: rejected master -> main</h3>
+            <div class="code-block">
+git branch -M main<br>
+git push -u origin main
+            </div>
+
+            <h3>❌ ปัญหา: Authentication failed</h3>
+            <ul>
+                <li>ใช้ Personal Access Token แทนรหัสผ่าน</li>
+                <li>หรือตั้งค่า SSH Key บน GitHub</li>
+            </ul>
+
+            <h3>❌ ปัญหา: GitHub Pages ไม่ทำงาน</h3>
+            <ul>
+                <li>ตรวจสอบ Settings → Pages</li>
+                <li>ตรวจสอบว่าเลือก Branch ถูกต้อง</li>
+                <li>รอ 1-2 นาที (บางครั้งต้อง refresh)</li>
+            </ul>
+        </div>
+
+        <!-- Helpful Commands -->
+        <div class="section">
+            <h2>✅ ตรวจสอบประวัติ Commit</h2>
+            <div class="code-block">
+# ดูประวัติ Commit<br>
+git log --oneline<br>
+<br>
+# ดูสาขา<br>
+git branch -a<br>
+<br>
+# ดู Remote<br>
+git remote -v
+            </div>
+        </div>
+
+        <!-- Final Steps -->
+        <div class="section">
+            <h2>🎉 เสร็จเรียบร้อย!</h2>
+            <div class="success-box">
+                โปรเจคของคุณอยู่บน GitHub แล้ว! 🚀<br><br>
+                ✅ Repository: <code style="background: rgba(0,0,0,0.3); padding: 5px 8px; margin-top: 8px; display: inline-block;">https://github.com/your-username/MyProject</code><br>
+                ✅ Website: <code style="background: rgba(0,0,0,0.3); padding: 5px 8px; margin-top: 8px; display: inline-block;">https://your-username.github.io/MyProject/</code><br>
+                ✅ แก้ไขไฟล์ได้ตลอด และ Push ขึ้น GitHub
+            </div>
+
+            <div class="button-group" style="margin-top: 30px;">
+                <a href="https://github.com" target="_blank" class="btn btn-primary">🔗 ไปที่ GitHub</a>
+                <a href="readme.html" class="btn btn-secondary">📄 กลับไป README</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(0, 212, 255, 0.2); opacity: 0.7;">
+            <p>Made with ❤️ by MyProject Team</p>
+        </div>
+    </div>
+</body>
+</html>
