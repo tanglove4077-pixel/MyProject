@@ -3,55 +3,67 @@ console.log("Welcome to VS Code Learning Hub");
 // ปุ่มเริ่มเรียน
 const startBtn = document.getElementById("startBtn");
 
-startBtn.addEventListener("click", function () {
-
-    alert("ยินดีต้อนรับเข้าสู่บทเรียน!");
-
-});
+if (startBtn) {
+    startBtn.addEventListener("click", function () {
+        // นำไปยังหน้า Install (เริ่มต้นแรกต้องติดตั้ง)
+        window.location.href = "install.html";
+    });
+}
 
 // ปุ่ม GitHub
 const githubBtn = document.getElementById("githubBtn");
 
-githubBtn.addEventListener("click", function () {
+if (githubBtn) {
+    githubBtn.addEventListener("click", function () {
+        // นำไปยังหน้า GitHub
+        window.location.href = "github.html";
+    });
+}
 
-    alert("บทต่อไปเราจะเชื่อมไปยัง GitHub");
+// Dark Mode Toggle
+const darkButton = document.getElementById("darkMode");
 
-});const darkButton = document.getElementById("darkMode");
+if (darkButton) {
+    darkButton.addEventListener("click", function(){
+        document.body.classList.toggle("dark");
+        // บันทึก preference ของ user
+        localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    });
+}
 
-darkButton.addEventListener("click", function(){
+// Load dark mode preference
+window.addEventListener("load", function() {
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+    }
+});
 
-document.body.classList.toggle("dark");
-
-});function openVSCode(){
-
-window.open("https://code.visualstudio.com","_blank");
-
+// ฟังก์ชันเปิด External Links
+function openVSCode(){
+    window.open("https://code.visualstudio.com","_blank");
 }
 
 function openGit(){
-
-window.open("https://git-scm.com","_blank");
-
+    window.open("https://git-scm.com","_blank");
 }
 
 function openNode(){
+    window.open("https://nodejs.org","_blank");
+}
 
-window.open("https://nodejs.org","_blank");
-
-}function copyCommand(id) {
-
-    const text = document.getElementById(id).textContent;
-
-    navigator.clipboard.writeText(text);
-
-    alert("คัดลอกแล้ว : " + text);
-
-}function copyCommand(id){
-
-    const text = document.getElementById(id).textContent;
-
-    navigator.clipboard.writeText(text);
-
-    alert("คัดลอกแล้ว\n\n" + text);
-
+// ฟังก์ชันคัดลอก Command
+function copyCommand(id) {
+    const element = document.getElementById(id);
+    if (!element) {
+        alert("ไม่พบโค้ด!");
+        return;
+    }
+    
+    const text = element.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        alert("✓ คัดลอกสำเร็จ!\n\n" + text);
+    }).catch(function(err) {
+        alert("ไม่สามารถคัดลอกได้");
+        console.error(err);
+    });
 }

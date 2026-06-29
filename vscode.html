@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code Guide - MyProject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        .vscode-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #0176c6 0%, #1e90ff 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .vscode-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .vscode-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .vscode-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .section p, .section li {
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .section ul, .section ol {
+            margin-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .download-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .shortcut-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .shortcut-table th, .shortcut-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .shortcut-table th {
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+        }
+
+        .shortcut-key {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .extension-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-left: 3px solid #ffff00;
+        }
+
+        .extension-card strong {
+            color: #ffff00;
+        }
+
+        @media (max-width: 768px) {
+            .vscode-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .vscode-header h1 {
+                font-size: 1.8em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .shortcut-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="vscode-container">
+        <div class="vscode-header">
+            <h1>💻 Visual Studio Code</h1>
+            <p>โปรแกรม Code Editor ที่ทรงพลังสำหรับนักพัฒนา</p>
+        </div>
+
+        <div class="section">
+            <h2>📖 VS Code คืออะไร?</h2>
+            <p>
+                Visual Studio Code (VS Code) เป็นโปรแกรมแก้ไขข้อความ (Source Code Editor) ที่ได้รับความนิยมสูงสุด
+                ในโลกของการพัฒนาซอฟต์แวร์ ออกแบบโดย Microsoft โดยเป็นโปรแกรมฟรีและโอเพนซอร์ส (Open Source)
+            </p>
+            <p>
+                VS Code มีความเบา เร็ว และสามารถขยายได้ด้วย Extensions ทำให้เหมาะสำหรับนักพัฒนา
+                ในส่วนมากที่ต้องการ Code Editor ที่ปลอดภัยและมีความยืดหยุ่นสูง
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>✨ ฟีเจอร์หลักของ VS Code</h2>
+            <div class="features-grid">
+                <div class="feature-item">Syntax Highlighting</div>
+                <div class="feature-item">IntelliSense (Auto-complete)</div>
+                <div class="feature-item">Debugging ในตัว</div>
+                <div class="feature-item">Terminal ในตัว</div>
+                <div class="feature-item">Git Integration</div>
+                <div class="feature-item">Extensions Marketplace</div>
+                <div class="feature-item">Themes และปรับแต่ง</div>
+                <div class="feature-item">Multi-language Support</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📥 การดาวน์โหลดและติดตั้ง</h2>
+            <p><strong>ขั้นตอนที่ 1: ไปที่เว็บไซต์ทางการ</strong></p>
+            <p>เข้าไปที่ <a href="https://code.visualstudio.com" target="_blank" style="color: #ffff00; text-decoration: none;">code.visualstudio.com</a></p>
+
+            <p><strong>ขั้นตอนที่ 2: เลือกระบบปฏิบัติการของคุณ</strong></p>
+            <ul>
+                <li>Windows</li>
+                <li>macOS</li>
+                <li>Linux</li>
+            </ul>
+
+            <p><strong>ขั้นตอนที่ 3: ติดตั้งและเปิดโปรแกรม</strong></p>
+            <ul>
+                <li>ดาวน์โหลดไฟล์ Installer</li>
+                <li>รัน Installer และตามขั้นตอนการติดตั้ง</li>
+                <li>เปิด VS Code</li>
+            </ul>
+
+            <a href="https://code.visualstudio.com/download" target="_blank" class="download-link">
+                📥 ดาวน์โหลด VS Code
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>🚀 วิธีการใช้งาน VS Code</h2>
+            <p><strong>1. สร้างโฟลเดอร์โปรเจค</strong></p>
+            <div class="code-block">
+mkdir my-project<br>
+cd my-project
+            </div>
+
+            <p><strong>2. เปิด VS Code ในโฟลเดอร์นั้น</strong></p>
+            <div class="code-block">
+code .
+            </div>
+
+            <p><strong>3. สร้างไฟล์ใหม่</strong></p>
+            <ul>
+                <li>คลิกปุ่ม "New File" ในเมนู File หรือกด <span class="shortcut-key">Ctrl + N</span></li>
+                <li>ตั้งชื่อไฟล์ และบันทึก</li>
+            </ul>
+
+            <p><strong>4. เริ่มเขียนโค้ด</strong></p>
+            <ul>
+                <li>พิมพ์โค้ด HTML, CSS, JavaScript</li>
+                <li>ใช้ IntelliSense เพื่อความสะดวก</li>
+                <li>บันทึกไฟล์เมื่อเสร็จ</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>⌨️ Keyboard Shortcuts ที่สำคัญ</h2>
+            <table class="shortcut-table">
+                <thead>
+                    <tr>
+                        <th>คำสั่ง</th>
+                        <th>Shortcut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>สร้างไฟล์ใหม่</td>
+                        <td><span class="shortcut-key">Ctrl + N</span></td>
+                    </tr>
+                    <tr>
+                        <td>เปิดไฟล์</td>
+                        <td><span class="shortcut-key">Ctrl + O</span></td>
+                    </tr>
+                    <tr>
+                        <td>บันทึกไฟล์</td>
+                        <td><span class="shortcut-key">Ctrl + S</span></td>
+                    </tr>
+                    <tr>
+                        <td>บันทึกทั้งหมด</td>
+                        <td><span class="shortcut-key">Ctrl + Shift + S</span></td>
+                    </tr>
+                    <tr>
+                        <td>ค้นหา</td>
+                        <td><span class="shortcut-key">Ctrl + F</span></td>
+                    </tr>
+                    <tr>
+                        <td>แทนที่</td>
+                        <td><span class="shortcut-key">Ctrl + H</span></td>
+                    </tr>
+                    <tr>
+                        <td>เปิด Terminal</td>
+                        <td><span class="shortcut-key">Ctrl + `</span></td>
+                    </tr>
+                    <tr>
+                        <td>ปิดแท็บ</td>
+                        <td><span class="shortcut-key">Ctrl + W</span></td>
+                    </tr>
+                    <tr>
+                        <td>เลือกบรรทัดทั้งหมด</td>
+                        <td><span class="shortcut-key">Ctrl + A</span></td>
+                    </tr>
+                    <tr>
+                        <td>ย้ายบรรทัด (ขึ้น)</td>
+                        <td><span class="shortcut-key">Alt + Up</span></td>
+                    </tr>
+                    <tr>
+                        <td>ย้ายบรรทัด (ลง)</td>
+                        <td><span class="shortcut-key">Alt + Down</span></td>
+                    </tr>
+                    <tr>
+                        <td>ทำให้เป็น Comment</td>
+                        <td><span class="shortcut-key">Ctrl + /</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🧩 Extensions ที่แนะนำ</h2>
+            <p><strong>สำหรับการพัฒนา Web:</strong></p>
+
+            <div class="extension-card">
+                <strong>1. Live Server</strong>
+                <p>ช่วยให้คุณสามารถ Preview ไฟล์ HTML ที่ทำการเปลี่ยนแปลงแบบ Real-time ได้</p>
+            </div>
+
+            <div class="extension-card">
+                <strong>2. Prettier - Code formatter</strong>
+                <p>ช่วยให้โค้ดของคุณดูสวยงาม และมีรูปแบบที่สม่ำเสมอโดยอัตโนมัติ</p>
+            </div>
+
+            <div class="extension-card">
+                <strong>3. ES7+ React/Redux/React-Native Snippets</strong>
+                <p>ให้ Snippets สำหรับการพัฒนา React Applications</p>
+            </div>
+
+            <div class="extension-card">
+                <strong>4. Thunder Client</strong>
+                <p>ใช้สำหรับ Test API และ HTTP Requests</p>
+            </div>
+
+            <div class="extension-card">
+                <strong>5. GitLens</strong>
+                <p>ช่วยให้คุณเห็นข้อมูล Git และ Commit History ได้อย่างชัดเจน</p>
+            </div>
+
+            <div class="extension-card">
+                <strong>6. Path Intellisense</strong>
+                <p>ให้ Auto-complete สำหรับ File Paths</p>
+            </div>
+
+            <p style="margin-top: 20px;">วิธีติดตั้ง Extensions:</p>
+            <ul>
+                <li>คลิกไอคอน Extensions ที่แถบด้านซ้าย หรือกด <span class="shortcut-key">Ctrl + Shift + X</span></li>
+                <li>พิมพ์ชื่อ Extension ที่ต้องการ</li>
+                <li>คลิกปุ่ม "Install"</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Themes และการปรับแต่ง</h2>
+            <p><strong>วิธีเปลี่ยน Theme:</strong></p>
+            <ul>
+                <li>ไปที่ File → Preferences → Color Theme</li>
+                <li>หรือกด <span class="shortcut-key">Ctrl + K Ctrl + T</span></li>
+                <li>เลือก Theme ที่ชอบ</li>
+            </ul>
+
+            <p><strong>Themes ที่นิยม:</strong></p>
+            <ul>
+                <li>Dracula - ธีมสีม่วงเข้มและเรียบร้อย</li>
+                <li>One Dark Pro - ธีมสีเข้มและใช้งานง่าย</li>
+                <li>Material Theme - ธีมสมัยใหม่จาก Material Design</li>
+                <li>Nord - ธีมสีเย็นสุดสวย</li>
+                <li>Atom One Dark - คล้ายกับ Editor Atom</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>💡 คำแนะนำในการใช้งาน</h2>
+            <ul>
+                <li><strong>ใช้ Code Formatting:</strong> บันทึกไฟล์จะมี Format โค้ดโดยอัตโนมัติ</li>
+                <li><strong>ใช้ Git Integration:</strong> Version Control ตรงใน VS Code</li>
+                <li><strong>ใช้ Emmet Abbreviation:</strong> เขียน HTML ได้เร็วขึ้น เช่น <span class="shortcut-key">div.container>h1+p</span></li>
+                <li><strong>ใช้ Multiple Cursors:</strong> กด <span class="shortcut-key">Ctrl + D</span> เพื่อเลือกคำเดียวกันหลายบรรทัด</li>
+                <li><strong>ใช้ Command Palette:</strong> กด <span class="shortcut-key">Ctrl + Shift + P</span> เพื่อเข้าถึงคำสั่งทั้งหมด</li>
+                <li><strong>ใช้ Workspace Settings:</strong> ตั้งค่า Settings ต่างๆ ตามความต้องการ</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔗 แหล่งข้อมูลเพิ่มเติม</h2>
+            <ul>
+                <li><a href="https://code.visualstudio.com/docs" target="_blank" style="color: #ffff00; text-decoration: none;">Documentation ทางการ</a></li>
+                <li><a href="https://code.visualstudio.com/api" target="_blank" style="color: #ffff00; text-decoration: none;">VS Code API</a></li>
+                <li><a href="https://marketplace.visualstudio.com" target="_blank" style="color: #ffff00; text-decoration: none;">Extensions Marketplace</a></li>
+                <li><a href="https://www.youtube.com" target="_blank" style="color: #ffff00; text-decoration: none;">YouTube Tutorials</a></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+            <p>เริ่มสร้างสิ่งที่ยอดเยี่ยมกับ VS Code ได้เลย! 🌟</p>
+        </div>
+    </div>
+</body>
+</html>

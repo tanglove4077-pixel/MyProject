@@ -1,83 +1,403 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Commands</title>
-
+    <title>Git Guide - MyProject</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        .git-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #f92672 0%, #e74c3c 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .git-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .git-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .git-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #fff;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .section p, .section li {
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .section ul, .section ol {
+            margin-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .command-block {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            border-left: 3px solid #ffff00;
+        }
+
+        .command-title {
+            color: #ffff00;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #ffff00;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .workflow-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .workflow-card h3 {
+            color: #ffff00;
+            margin-bottom: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .git-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .git-header h1 {
+                font-size: 1.8em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="git-container">
+        <div class="git-header">
+            <h1>🌳 Git - Version Control</h1>
+            <p>ระบบจัดการเวอร์ชันไฟล์ที่ทรงพลังสำหรับทีม</p>
+        </div>
 
-<header>
+        <div class="section">
+            <h2>📖 Git คืออะไร?</h2>
+            <p>
+                <strong>Git</strong> คือระบบจัดการเวอร์ชัน (Version Control System) ที่ช่วยให้นักพัฒนา
+                สามารถติดตามการเปลี่ยนแปลงของโค้ด จัดการโปรเจคแบบทีม และกลับไปยังเวอร์ชันเก่าได้อย่างง่ายดาย
+            </p>
+            <p>
+                Git ถูกสร้างโดย Linus Torvalds (ผู้สร้าง Linux) และกลายมาเป็นมาตรฐาน
+                ของระบบ Version Control ในอุตสาหกรรมการพัฒนาซอฟต์แวร์
+            </p>
+        </div>
 
-<div class="logo">
+        <div class="section">
+            <h2>✨ ฟีเจอร์หลักของ Git</h2>
+            <div class="features-grid">
+                <div class="feature-item">Distributed Version Control</div>
+                <div class="feature-item">Branching & Merging</div>
+                <div class="feature-item">Commit History</div>
+                <div class="feature-item">Conflict Resolution</div>
+                <div class="feature-item">Tagging & Release</div>
+                <div class="feature-item">Stashing</div>
+                <div class="feature-item">Rebase</div>
+                <div class="feature-item">Collaboration</div>
+            </div>
+        </div>
 
-VS Code Learning Hub
+        <div class="section">
+            <h2>⚙️ Git Configuration (ตั้งค่าครั้งแรก)</h2>
+            <p><strong>หลังจากติดตั้ง Git แล้ว ให้ตั้งค่าชื่อและอีเมลของคุณ:</strong></p>
+            
+            <div class="command-block">
+                <div class="command-title">☝️ ตั้งค่าชื่อผู้ใช้</div>
+                <code>git config --global user.name "Your Name"</code>
+            </div>
 
-</div>
+            <div class="command-block">
+                <div class="command-title">☝️ ตั้งค่าอีเมล</div>
+                <code>git config --global user.email "your.email@example.com"</code>
+            </div>
 
-<nav>
+            <div class="command-block">
+                <div class="command-title">☝️ ตรวจสอบการตั้งค่า</div>
+                <code>git config --list</code>
+            </div>
+        </div>
 
-<a href="index.html">Home</a>
+        <div class="section">
+            <h2>🚀 Git Commands พื้นฐาน</h2>
 
-<a href="install.html">Install</a>
+            <div class="workflow-card">
+                <h3>1️⃣ Clone Repository</h3>
+                <p>ดาวน์โหลดโปรเจคจาก GitHub</p>
+                <div class="command-block">
+                    <code>git clone https://github.com/username/repo.git</code>
+                </div>
+            </div>
 
-<a href="git.html">Git</a>
+            <div class="workflow-card">
+                <h3>2️⃣ Check Status</h3>
+                <p>ตรวจสอบสถานะของไฟล์</p>
+                <div class="command-block">
+                    <code>git status</code>
+                </div>
+            </div>
 
-<a href="github.html">GitHub</a>
+            <div class="workflow-card">
+                <h3>3️⃣ Add Files</h3>
+                <p>เพิ่มไฟล์ที่ต้องการ Commit</p>
+                <div class="command-block">
+                    <code>git add .</code>
+                    <div style="margin-top: 5px; opacity: 0.8;">// เพิ่มไฟล์ทั้งหมด</div>
+                </div>
+                <div class="command-block" style="margin-top: 10px;">
+                    <code>git add filename.txt</code>
+                    <div style="margin-top: 5px; opacity: 0.8;">// เพิ่มไฟล์เดียว</div>
+                </div>
+            </div>
 
-</nav>
+            <div class="workflow-card">
+                <h3>4️⃣ Commit Changes</h3>
+                <p>บันทึกการเปลี่ยนแปลง</p>
+                <div class="command-block">
+                    <code>git commit -m "Description of changes"</code>
+                </div>
+            </div>
 
-</header>
+            <div class="workflow-card">
+                <h3>5️⃣ Push to Remote</h3>
+                <p>อัพโหลดโค้ดไปยัง GitHub</p>
+                <div class="command-block">
+                    <code>git push origin main</code>
+                </div>
+            </div>
 
-<section class="page-title">
+            <div class="workflow-card">
+                <h3>6️⃣ Pull Latest Changes</h3>
+                <p>ดาวน์โหลดการเปลี่ยนแปลงล่าสุด</p>
+                <div class="command-block">
+                    <code>git pull origin main</code>
+                </div>
+            </div>
+        </div>
 
-<h1>Git Commands</h1>
+        <div class="section">
+            <h2>🌿 Branching (สาขา)</h2>
+            <p>Branch ช่วยให้คุณทำงานแยกจากกัน โดยไม่กระทบต่อเวอร์ชันหลัก</p>
 
-<p>เรียนรู้คำสั่งพื้นฐานของ Git</p>
+            <div class="command-block">
+                <div class="command-title">📌 สร้าง Branch ใหม่</div>
+                <code>git checkout -b feature/new-feature</code>
+            </div>
 
-</section>
+            <div class="command-block">
+                <div class="command-title">📌 ดูรายการ Branch ทั้งหมด</div>
+                <code>git branch -a</code>
+            </div>
 
-<section class="commands">
+            <div class="command-block">
+                <div class="command-title">📌 สลับไป Branch อื่น</div>
+                <code>git checkout branch-name</code>
+            </div>
 
-<div class="command-box">
-<code id="cmd1">git init</code>
-<button onclick="copyCommand('cmd1')">Copy</button>
-</div>
+            <div class="command-block">
+                <div class="command-title">📌 ลบ Branch</div>
+                <code>git branch -d branch-name</code>
+            </div>
 
-<div class="command-box">
-<code id="cmd2">git status</code>
-<button onclick="copyCommand('cmd2')">Copy</button>
-</div>
+            <div class="command-block">
+                <div class="command-title">📌 Merge Branch เข้ากับ main</div>
+                <code>git merge feature/new-feature</code>
+            </div>
+        </div>
 
-<div class="command-box">
-<code id="cmd3">git add .</code>
-<button onclick="copyCommand('cmd3')">Copy</button>
-</div>
+        <div class="section">
+            <h2>📊 Git Workflow (ขั้นตอนการทำงาน)</h2>
+            <p><strong>Working Directory → Staging Area → Repository</strong></p>
+            <p>ระบบ Git มี 3 ส่วนหลัก:</p>
 
-<div class="command-box">
-<code id="cmd4">git commit -m "ข้อความ"</code>
-<button onclick="copyCommand('cmd4')">Copy</button>
-</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>ส่วน</th>
+                        <th>คำอธิบาย</th>
+                        <th>Command</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Working Directory</strong></td>
+                        <td>ไฟล์ที่คุณแก้ไข</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Staging Area</strong></td>
+                        <td>ไฟล์ที่เตรียมพร้อม commit</td>
+                        <td>git add</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Repository</strong></td>
+                        <td>บันทึกโปรเจค (History)</td>
+                        <td>git commit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-<div class="command-box">
-<code id="cmd5">git push</code>
-<button onclick="copyCommand('cmd5')">Copy</button>
-</div>
+        <div class="section">
+            <h2>📝 Commit Best Practices</h2>
+            <ul>
+                <li><strong>Commit อย่างบ่อย:</strong> ทำให้ History ชัดเจน</li>
+                <li><strong>แสดง Message ที่ชัดเจน:</strong> เพื่อให้ผู้อื่นเข้าใจ
+                    <div class="command-block">
+                        <code>git commit -m "Fix: resolve login bug"</code>
+                    </div>
+                </li>
+                <li><strong>ไม่ Commit ไฟล์ที่ไม่จำเป็น:</strong> ใช้ .gitignore</li>
+                <li><strong>Review ก่อน Commit:</strong> ใช้ git diff</li>
+            </ul>
+        </div>
 
-</section>
+        <div class="section">
+            <h2>🔧 Advanced Commands</h2>
 
-<footer>
+            <div class="command-block">
+                <div class="command-title">📌 ดู Commit History</div>
+                <code>git log --oneline</code>
+            </div>
 
-© 2026 VS Code Learning Hub
+            <div class="command-block">
+                <div class="command-title">📌 ดู Diff ระหว่าง Files</div>
+                <code>git diff</code>
+            </div>
 
-</footer>
+            <div class="command-block">
+                <div class="command-title">📌 Undo Commit ล่าสุด</div>
+                <code>git reset --soft HEAD~1</code>
+            </div>
 
-<script src="js/script.js"></script>
+            <div class="command-block">
+                <div class="command-title">📌 Stash Changes (Save temporarily)</div>
+                <code>git stash</code>
+            </div>
 
+            <div class="command-block">
+                <div class="command-title">📌 Apply Stashed Changes</div>
+                <code>git stash pop</code>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔄 Git & GitHub Workflow</h2>
+            <ol>
+                <li>Fork หรือ Clone Repository</li>
+                <li>สร้าง Branch ใหม่: <code style="background: rgba(0,0,0,0.2); padding: 2px 5px;">git checkout -b feature</code></li>
+                <li>แก้ไขไฟล์และ Commit: <code style="background: rgba(0,0,0,0.2); padding: 2px 5px;">git add . && git commit -m "..."</code></li>
+                <li>Push Branch: <code style="background: rgba(0,0,0,0.2); padding: 2px 5px;">git push origin feature</code></li>
+                <li>สร้าง Pull Request บน GitHub</li>
+                <li>รอการ Review และ Merge</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>💡 Tips & Tricks</h2>
+            <ul>
+                <li>สร้าง <strong>.gitignore</strong> ไฟล์เพื่อ exclude ไฟล์ที่ไม่ต้องการ</li>
+                <li>ใช้ <code style="background: rgba(0,0,0,0.2); padding: 2px 5px;">git alias</code> เพื่อลัดสั้น command</li>
+                <li>ใช้ Git GUI Tools เช่น GitGUI, GitHub Desktop สำหรับผู้เริ่มต้น</li>
+                <li>ติดตั้ง Git Extensions ใน VS Code</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔗 แหล่งข้อมูลเพิ่มเติม</h2>
+            <ul>
+                <li><a href="https://git-scm.com/doc" target="_blank" style="color: #ffff00; text-decoration: none;">Official Git Documentation</a></li>
+                <li><a href="https://github.com" target="_blank" style="color: #ffff00; text-decoration: none;">GitHub</a></li>
+                <li><a href="https://www.atlassian.com/git" target="_blank" style="color: #ffff00; text-decoration: none;">Atlassian Git Tutorial</a></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; opacity: 0.8;">
+            <p>ยินดีต้อนรับสู่โลก Version Control! 🎉</p>
+        </div>
+    </div>
 </body>
-
 </html>

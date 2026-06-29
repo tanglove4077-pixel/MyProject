@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README - MyProject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/darkmode.css">
+    <style>
+        .readme-container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .readme-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .readme-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .readme-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3 {
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #ffff00;
+        }
+
+        .section p, .section li {
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .section ul, .section ol {
+            margin-left: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #ffd700;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            border-left: 3px solid #ffff00;
+        }
+
+        .structure-tree {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .tech-item strong {
+            color: #ffd700;
+        }
+
+        .changelog {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid #4CAF50;
+        }
+
+        .toc {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .toc h3 {
+            color: #ffff00;
+            margin-bottom: 15px;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: #ffff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .divider {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .readme-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .readme-header h1 {
+                font-size: 1.8em;
+            }
+
+            .features-list,
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .badges {
+                flex-direction: column;
+            }
+
+            .badge {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="readme-container">
+        <div class="readme-header">
+            <h1>📚 MyProject - VS Code Learning Hub</h1>
+            <p>แพลตฟอร์มการเรียนรู้แบบโต้ตอบสำหรับการเรียน HTML, CSS, JavaScript, Git และ GitHub</p>
+            <div class="badges">
+                <span class="badge">📜 MIT License</span>
+                <span class="badge">📦 v1.0.0</span>
+                <span class="badge">✅ Active</span>
+            </div>
+        </div>
+
+        <div class="toc">
+            <h3>📑 สารบัญ</h3>
+            <ul>
+                <li><a href="#overview">📖 สรุปโปรเจค</a></li>
+                <li><a href="#features">✨ ฟีเจอร์หลัก</a></li>
+                <li><a href="#install">🚀 วิธีการติดตั้ง</a></li>
+                <li><a href="#usage">💻 วิธีการใช้งาน</a></li>
+                <li><a href="#structure">📁 โครงสร้างโปรเจค</a></li>
+                <li><a href="#tech">🌍 Technologies</a></li>
+                <li><a href="#contribute">🤝 Contributing</a></li>
+                <li><a href="#support">📞 Support</a></li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Overview Section -->
+        <div class="section" id="overview">
+            <h2>📖 สรุปโปรเจค</h2>
+            <p>
+                <strong>MyProject</strong> เป็นแพลตฟอร์มการเรียนรู้ดิจิทัลที่ออกแบบมาเพื่อให้ครูและนักเรียนสามารถเรียนรู้เทคโนโลยี Web Development ได้อย่างมีประสิทธิภาพ
+            </p>
+            <h3>คุณสมบัติพิเศษ:</h3>
+            <div class="features-list">
+                <div class="feature-item">📱 Responsive Design</div>
+                <div class="feature-item">🌙 Dark/Light Mode</div>
+                <div class="feature-item">🎓 Interactive Learning</div>
+                <div class="feature-item">🔧 Easy Setup</div>
+                <div class="feature-item">💻 Multi-language</div>
+                <div class="feature-item">🚀 Production Ready</div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="section" id="features">
+            <h2>✨ ฟีเจอร์หลัก</h2>
+
+            <h3>🏠 หน้าแรก (Home Page)</h3>
+            <ul>
+                <li>ข้อมูลทั่วไปเกี่ยวกับแพลตฟอร์ม</li>
+                <li>ปุ่มเข้าถึงหลักสูตรการเรียนรู้</li>
+                <li>ข้อมูล YouTube, GitHub, และ VSCode</li>
+            </ul>
+
+            <h3>📝 หน้าบทเรียน (Lessons Page)</h3>
+            <ul>
+                <li>รายการบทเรียนที่จัดแบ่งหมวดหมู่</li>
+                <li>การแสดงรายละเอียดของบทเรียน</li>
+                <li>ติดตามความคืบหน้า</li>
+            </ul>
+
+            <h3>🎯 หน้าควิซ (Quiz Page)</h3>
+            <ul>
+                <li>แบบทดสอบเพื่อประเมินความเข้าใจ</li>
+                <li>ระบบการให้คะแนนอัตโนมัติ</li>
+                <li>ผลลัพธ์ที่แสดงรายละเอียด</li>
+            </ul>
+
+            <h3>📚 หน้า Documentation</h3>
+            <ul>
+                <li>🛠️ หน้า Install - คำแนะนำการติดตั้ง</li>
+                <li>🔧 หน้า VS Code - คู่มือการใช้</li>
+                <li>🌳 หน้า Git - Version Control Tutorial</li>
+                <li>📦 หน้า GitHub - Repository Guide</li>
+                <li>📞 หน้า Contact - ติดต่อเรา</li>
+            </ul>
+        </div>
+
+        <!-- Installation Section -->
+        <div class="section" id="install">
+            <h2>🚀 วิธีการติดตั้ง</h2>
+
+            <h3>ขั้นตอนที่ 1: Clone Repository</h3>
+            <div class="code-block">git clone https://github.com/your-username/MyProject.git<br>cd MyProject</div>
+
+            <h3>ขั้นตอนที่ 2: ติดตั้ง Dependencies</h3>
+            <div class="code-block">npm install</div>
+
+            <h3>ขั้นตอนที่ 3: รัน Development Server</h3>
+            <div class="code-block">npm run dev</div>
+
+            <h3>ขั้นตอนที่ 4: เปิดในเบราว์เซอร์</h3>
+            <p>เข้าไปที่ <code style="background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 3px;">http://localhost:5173</code> (หรือ port ที่แสดงใน terminal)</p>
+        </div>
+
+        <!-- Usage Section -->
+        <div class="section" id="usage">
+            <h2>💻 วิธีการใช้งาน</h2>
+
+            <h3>สำหรับผู้เรียน</h3>
+            <ol>
+                <li><strong>เข้าสู่แพลตฟอร์ม</strong> - เปิด URL ของเว็บไซต์</li>
+                <li><strong>เลือกบทเรียน</strong> - ดูรายการบทเรียนและเลือก</li>
+                <li><strong>เรียนรู้</strong> - อ่านเนื้อหาและทำตามตัวอย่าง</li>
+                <li><strong>ทำควิซ</strong> - ทดสอบความเข้าใจด้วยแบบทดสอบ</li>
+                <li><strong>บันทึกความคืบหน้า</strong> - ระบบจะบันทึกโดยอัตโนมัติ</li>
+            </ol>
+
+            <h3>สำหรับผู้พัฒนา</h3>
+            <ol>
+                <li><strong>ติดตั้งโปรเจค</strong> - ตามขั้นตอนการติดตั้งข้างบน</li>
+                <li><strong>เปิด VS Code</strong> - <code style="background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 3px;">code .</code></li>
+                <li><strong>ทำการแก้ไข</strong> - ทำการเปลี่ยนแปลงในไฟล์ต่างๆ</li>
+                <li><strong>บันทึกและทดสอบ</strong> - บันทึกแล้วเบราว์เซอร์จะ refresh อัตโนมัติ</li>
+                <li><strong>Commit และ Push</strong> - อัปโหลดการเปลี่ยนแปลงขึ้น GitHub</li>
+            </ol>
+        </div>
+
+        <!-- Structure Section -->
+        <div class="section" id="structure">
+            <h2>📁 โครงสร้างโปรเจค</h2>
+            <div class="structure-tree">MyProject/<br>
+├── index.html                 # หน้าแรกของเว็บไซต์<br>
+├── main.jsx                   # Entry point ของ React<br>
+├── App.jsx                    # คอมโพเนนต์หลัก<br>
+├── package.json               # Dependencies และ scripts<br>
+├── README.md                  # Documentation<br>
+│<br>
+├── components/                # คอมโพเนนต์ React<br>
+│   ├── Navbar.jsx            # นำเวิเกศน์<br>
+│   └── LessonCard.jsx        # บัตรบทเรียน<br>
+│<br>
+├── pages/                     # หน้าต่างๆ<br>
+│   ├── Home.jsx<br>
+│   ├── Lesson.jsx<br>
+│   ├── Quiz.jsx<br>
+│   ├── Start.jsx<br>
+│   └── Install.jsx<br>
+│<br>
+├── css/                       # Stylesheets<br>
+│   ├── style.css<br>
+│   ├── home.css<br>
+│   ├── install.css<br>
+│   ├── responsive.css<br>
+│   └── darkmode.css<br>
+│<br>
+├── js/                        # JavaScript files<br>
+│   ├── script.js<br>
+│   ├── darkmode.js<br>
+│   └── copy.js<br>
+│<br>
+├── images/                    # รูปภาพและสื่อ<br>
+│<br>
+├── git.html                   # หน้า Git Guide<br>
+├── github.html                # หน้า GitHub Guide<br>
+├── install.html               # หน้าติดตั้ง<br>
+├── vscode.html                # หน้า VS Code Guide<br>
+├── readme.html                # หน้านี้<br>
+└── contact.html               # หน้าติดต่อ</div>
+        </div>
+
+        <!-- Technologies Section -->
+        <div class="section" id="tech">
+            <h2>🌍 Technologies Used</h2>
+
+            <h3>Frontend</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><strong>HTML5</strong> - Markup structure</div>
+                <div class="tech-item"><strong>CSS3</strong> - Styling & Layout</div>
+                <div class="tech-item"><strong>JavaScript (ES6+)</strong> - Interactivity</div>
+                <div class="tech-item"><strong>React</strong> - UI Components</div>
+            </div>
+
+            <h3>Build & Tooling</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><strong>Vite</strong> - Build tool</div>
+                <div class="tech-item"><strong>npm</strong> - Package manager</div>
+                <div class="tech-item"><strong>Git</strong> - Version control</div>
+                <div class="tech-item"><strong>GitHub</strong> - Repository</div>
+            </div>
+
+            <h3>Development</h3>
+            <div class="tech-grid">
+                <div class="tech-item"><strong>VS Code</strong> - Code editor</div>
+                <div class="tech-item"><strong>GitHub Pages</strong> - Deployment</div>
+                <div class="tech-item"><strong>Responsive Design</strong> - Mobile-first</div>
+                <div class="tech-item"><strong>Dark Mode</strong> - Accessibility</div>
+            </div>
+        </div>
+
+        <!-- Contributing Section -->
+        <div class="section" id="contribute">
+            <h2>🤝 วิธีการมีส่วนร่วม (Contributing)</h2>
+
+            <h3>ขั้นตอนการ Contribute:</h3>
+            <ol>
+                <li><strong>Fork และ Clone</strong>
+                    <div class="code-block">git clone https://github.com/your-username/MyProject.git<br>cd MyProject</div>
+                </li>
+                <li><strong>สร้าง Feature Branch</strong>
+                    <div class="code-block">git checkout -b feature/YourFeatureName</div>
+                </li>
+                <li><strong>ทำการแก้ไขและ Commit</strong>
+                    <div class="code-block">git add .<br>git commit -m "Add: YourFeatureName"</div>
+                </li>
+                <li><strong>Push ไปยัง Repository</strong>
+                    <div class="code-block">git push origin feature/YourFeatureName</div>
+                </li>
+                <li><strong>สร้าง Pull Request</strong> บน GitHub</li>
+            </ol>
+
+            <h3>Contribution Guidelines:</h3>
+            <ul>
+                <li>ทำให้แน่ใจว่า Code ตามมาตรฐาน</li>
+                <li>เพิ่ม Comments สำหรับ Logic ที่ซับซ้อน</li>
+                <li>ทดสอบก่อน Commit</li>
+                <li>ยึดตามชื่อ Branch ที่มาตรฐาน</li>
+            </ul>
+        </div>
+
+        <!-- Support Section -->
+        <div class="section" id="support">
+            <h2>📞 Support & Contact</h2>
+            <ul>
+                <li><strong>Issues:</strong> สร้าง Issue บน <a href="https://github.com" target="_blank" style="color: #ffff00; text-decoration: none;">GitHub</a></li>
+                <li><strong>Email:</strong> <a href="mailto:support@myproject.com" style="color: #ffff00; text-decoration: none;">support@myproject.com</a></li>
+                <li><strong>Contact Page:</strong> <a href="contact.html" style="color: #ffff00; text-decoration: none;">ติดต่อเรา</a></li>
+            </ul>
+        </div>
+
+        <!-- Changelog Section -->
+        <div class="section">
+            <h2>📝 Changelog</h2>
+
+            <div class="changelog">
+                <strong>Version 1.0.0 (2026-06-29)</strong>
+                <ul>
+                    <li>✅ Initial Release</li>
+                    <li>✅ Home, Lesson, Quiz Pages</li>
+                    <li>✅ Dark Mode Feature</li>
+                    <li>✅ Responsive Design</li>
+                    <li>✅ Git, GitHub, VS Code Guides</li>
+                    <li>✅ Installation Guide</li>
+                    <li>✅ Contact Page</li>
+                    <li>✅ README Documentation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- License Section -->
+        <div class="section">
+            <h2>📜 License</h2>
+            <p>โปรเจคนี้ได้รับใบอนุญาตภายใต้ <strong>MIT License</strong></p>
+            <p style="opacity: 0.8; font-size: 0.95em;">
+                Copyright (c) 2026 MyProject Team<br><br>
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction...
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); opacity: 0.9;">
+            <p>Made with ❤️ by MyProject Team</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                <a href="#" style="color: #ffff00; text-decoration: none; margin: 0 10px;">GitHub</a> •
+                <a href="#" style="color: #ffff00; text-decoration: none; margin: 0 10px;">Website</a> •
+                <a href="contact.html" style="color: #ffff00; text-decoration: none; margin: 0 10px;">Contact</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
